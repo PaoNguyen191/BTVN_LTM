@@ -10,11 +10,11 @@
 
 int main(int argc, char *argv[]){
     if(argc != 3){
-        fprintf(stderr, "Cach su dung: %s <dia_chi_IP> <cong>\n", argv[0]);
+        fprintf(stderr, "Cách sử dụng: %s <Địa chỉ IP> <Cổng>\n", argv[0]);
         exit(EXIT_FAILURE);
     }
     // Tạo socket
-    int client_fd = socket(AF_INET, SOCK_STREAM, 0);
+    int client_fd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
     if(client_fd < 0){
         perror("socket() failed");
         exit(EXIT_FAILURE);
